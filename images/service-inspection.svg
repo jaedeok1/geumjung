@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img" aria-label="차량 검사 진단 정밀 도해">
+  <defs>
+    <linearGradient id="c-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#421a17"/><stop offset="0.65" stop-color="#100a0a"/><stop offset="1" stop-color="#070606"/>
+    </linearGradient>
+    <radialGradient id="c-glow" cx="0.4" cy="0.55" r="0.5">
+      <stop offset="0" stop-color="#e22718" stop-opacity="0.22"/><stop offset="1" stop-color="#e22718" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="c-dial" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#20262e"/><stop offset="1" stop-color="#0a0d11"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="480" height="270" fill="url(#c-bg)"/>
+  <ellipse cx="200" cy="150" rx="150" ry="105" fill="url(#c-glow)"/>
+
+  <!-- 정밀 그리드 -->
+  <g stroke="#d6a79f" stroke-opacity="0.06" stroke-width="1">
+    <path d="M0 30H480M0 60H480M0 90H480M0 120H480M0 150H480M0 180H480M0 210H480M0 240H480"/>
+    <path d="M30 0V270M60 0V270M90 0V270M120 0V270M150 0V270M180 0V270M210 0V270M240 0V270M270 0V270M300 0V270M330 0V270M360 0V270M390 0V270M420 0V270M450 0V270"/>
+  </g>
+  <g stroke="#7e8794" stroke-width="1.5" fill="none">
+    <path d="M16 30 V16 H30 M450 16 H464 V30 M464 240 V254 H450 M30 254 H16 V240"/>
+  </g>
+
+  <!-- 계기판 -->
+  <g>
+    <circle cx="188" cy="150" r="74" fill="none" stroke="#2b333d" stroke-width="8"/>
+    <circle cx="188" cy="150" r="66" fill="url(#c-dial)" stroke="#aab4c2" stroke-width="2"/>
+
+    <!-- 눈금 (마이너) -->
+    <g stroke="#7e8794" stroke-width="2">
+      <path d="M188 92 v8" transform="rotate(-120 188 150)"/>
+      <path d="M188 92 v8" transform="rotate(-96 188 150)"/>
+      <path d="M188 92 v8" transform="rotate(-72 188 150)"/>
+      <path d="M188 92 v8" transform="rotate(-48 188 150)"/>
+      <path d="M188 92 v8" transform="rotate(-24 188 150)"/>
+      <path d="M188 92 v8" transform="rotate(0 188 150)"/>
+      <path d="M188 92 v8" transform="rotate(24 188 150)"/>
+      <path d="M188 92 v8" transform="rotate(48 188 150)"/>
+    </g>
+    <!-- 눈금 (메이저) -->
+    <g stroke="#dbe4f0" stroke-width="3">
+      <path d="M188 90 v12" transform="rotate(-120 188 150)"/>
+      <path d="M188 90 v12" transform="rotate(-60 188 150)"/>
+      <path d="M188 90 v12" transform="rotate(0 188 150)"/>
+      <path d="M188 90 v12" transform="rotate(60 188 150)"/>
+      <path d="M188 90 v12" transform="rotate(120 188 150)"/>
+    </g>
+    <!-- 레드라인 구간 -->
+    <path d="M240.3 118.2 A66 66 0 0 1 245.2 181"
+          fill="none" stroke="#e22718" stroke-width="6"/>
+
+    <!-- 바늘 -->
+    <g transform="rotate(38 188 150)">
+      <path d="M188 150 L188 92" stroke="#1c69d4" stroke-width="5" stroke-linecap="round"/>
+      <path d="M188 150 L188 168" stroke="#1c69d4" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+    </g>
+    <circle cx="188" cy="150" r="10" fill="#12161c" stroke="#dbe4f0" stroke-width="2.5"/>
+    <circle cx="188" cy="150" r="3" fill="#dbe4f0"/>
+  </g>
+
+  <!-- 진단 스캐너 화면 -->
+  <g>
+    <rect x="300" y="112" width="150" height="86" rx="8" fill="#0b0f14" stroke="#c3ccd8" stroke-width="2.5"/>
+    <rect x="310" y="122" width="130" height="52" rx="3" fill="#0a1a16" stroke="#1f2a33" stroke-width="1.5"/>
+    <!-- 파형 -->
+    <polyline points="312,150 326,150 334,132 344,168 354,140 366,150 380,150 388,134 398,164 408,146 420,150 438,150"
+              fill="none" stroke="#0fa336" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- 상태 표시등 -->
+    <circle cx="316" cy="186" r="3.5" fill="#0fa336"/>
+    <circle cx="330" cy="186" r="3.5" fill="#e22718"/>
+    <path d="M344 186 h40" stroke="#3a4756" stroke-width="3" stroke-linecap="round"/>
+    <!-- OBD 커넥터/케이블 -->
+    <path d="M300 176 C270 176 262 200 244 200" fill="none" stroke="#8b95a3" stroke-width="3"/>
+    <rect x="222" y="192" width="24" height="16" rx="3" fill="#12161c" stroke="#aab4c2" stroke-width="2"/>
+  </g>
+
+  <g stroke="#1c69d4" stroke-width="1.4" opacity="0.7">
+    <path d="M300 216 H450"/><path d="M300 212 V220 M450 212 V220"/>
+  </g>
+</svg>

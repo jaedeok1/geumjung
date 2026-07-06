@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img" aria-label="보험 처리 정밀 도해">
+  <defs>
+    <linearGradient id="i-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123156"/><stop offset="0.65" stop-color="#0a0e14"/><stop offset="1" stop-color="#060708"/>
+    </linearGradient>
+    <radialGradient id="i-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#0066b1" stop-opacity="0.3"/><stop offset="1" stop-color="#0066b1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="i-shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a2634"/><stop offset="1" stop-color="#0b0f14"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="480" height="270" fill="url(#i-bg)"/>
+  <ellipse cx="240" cy="138" rx="150" ry="105" fill="url(#i-glow)"/>
+
+  <!-- 정밀 그리드 -->
+  <g stroke="#9fb4d6" stroke-opacity="0.06" stroke-width="1">
+    <path d="M0 30H480M0 60H480M0 90H480M0 120H480M0 150H480M0 180H480M0 210H480M0 240H480"/>
+    <path d="M30 0V270M60 0V270M90 0V270M120 0V270M150 0V270M180 0V270M210 0V270M240 0V270M270 0V270M300 0V270M330 0V270M360 0V270M390 0V270M420 0V270M450 0V270"/>
+  </g>
+  <g stroke="#7e8794" stroke-width="1.5" fill="none">
+    <path d="M16 30 V16 H30 M450 16 H464 V30 M464 240 V254 H450 M30 254 H16 V240"/>
+  </g>
+
+  <!-- 방패 -->
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <path d="M240 44 L318 72 V150 Q318 202 240 232 Q162 202 162 150 V72 Z"
+          fill="url(#i-shield)" stroke="#c3ccd8" stroke-width="3"/>
+    <path d="M240 58 L305 81 V148 Q305 192 240 217 Q175 192 175 148 V81 Z"
+          fill="none" stroke="#3a4756" stroke-width="1.5"/>
+
+    <!-- 방패 안 자동차 (정면) -->
+    <g fill="none" stroke="#dbe4f0" stroke-width="3">
+      <path d="M204 132 h72 l-8 -22 q-3 -8 -12 -8 h-32 q-9 0 -12 8 z"/>
+      <path d="M204 132 v14 h10 v-6 M276 132 v14 h-10 v-6"/>
+      <path d="M222 102 h36" />
+    </g>
+    <rect x="210" y="118" width="16" height="9" rx="2" fill="#0066b1"/>
+    <rect x="254" y="118" width="16" height="9" rx="2" fill="#0066b1"/>
+
+    <!-- 데이터 라인 (증서) -->
+    <g stroke="#59636f" stroke-width="3">
+      <path d="M210 160 h60"/><path d="M210 172 h60"/><path d="M210 184 h40"/>
+    </g>
+  </g>
+
+  <!-- 승인 인장 (체크) -->
+  <g>
+    <circle cx="306" cy="196" r="30" fill="#0b0f14" stroke="#1c69d4" stroke-width="3"/>
+    <circle cx="306" cy="196" r="30" fill="none" stroke="#0066b1" stroke-width="1.5" stroke-dasharray="4 5" opacity="0.7" transform="scale(1)"/>
+    <path d="M292 197 l10 10 l20 -22" fill="none" stroke="#e22718" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g stroke="#1c69d4" stroke-width="1.4" opacity="0.7">
+    <path d="M162 250 H318"/><path d="M162 246 V254 M318 246 V254"/>
+  </g>
+</svg>
