@@ -11,17 +11,21 @@ SITE_URL = "https://geumjung.netlify.app/"
 root = pathlib.Path(__file__).parent
 src = (root / "page.src.html").read_text()
 
-# inline photos
-rules = []
-for name in ["master", "tire", "engine", "oil", "brake"]:
-    b64 = base64.b64encode((root / "assets" / f"{name}.webp").read_bytes()).decode()
-    rules.append(f".ph-{name}{{background-image:url(data:image/webp;base64,{b64})}}")
-
+PHOTOS = ["master", "tire", "engine", "oil", "brake"]
 marker = '<style id="photoCss"></style>'
 assert marker in src, "photoCss marker not found"
-fragment = src.replace(marker, '<style id="photoCss">' + "\n".join(rules) + "</style>")
 
+# artifact fragment: external requests are blocked, so photos go in as base64
+b64_rules = []
+for name in PHOTOS:
+    b64 = base64.b64encode((root / "assets" / f"{name}.webp").read_bytes()).decode()
+    b64_rules.append(f".ph-{name}{{background-image:url(data:image/webp;base64,{b64})}}")
+fragment = src.replace(marker, '<style id="photoCss">' + "\n".join(b64_rules) + "</style>")
 (root / "geumjung-motors.html").write_text(fragment)
+
+# hosted build: reference the asset files so they load in parallel and cache
+url_rules = [f".ph-{name}{{background-image:url(assets/{name}.webp)}}" for name in PHOTOS]
+hosted = src.replace(marker, '<style id="photoCss">' + "\n".join(url_rules) + "</style>")
 
 # ── standalone document for hosting ──
 seo_head = f"""<meta charset="utf-8">
@@ -83,10 +87,10 @@ seo_head = f"""<meta charset="utf-8">
 }}
 </script>"""
 
-# the fragment is head-content (title/meta/styles) followed by body markup;
+# the hosted build is head-content (title/meta/styles) followed by body markup;
 # the first body element is the top M stripe
 split_at = '<div class="m-stripe top-stripe"'
-head_part, body_part = fragment.split(split_at, 1)
+head_part, body_part = hosted.split(split_at, 1)
 body_part = split_at + body_part
 
 standalone = f"""<!doctype html>
