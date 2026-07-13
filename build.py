@@ -6,7 +6,7 @@
 """
 import base64, pathlib
 
-SITE_URL = "https://jaedeok1.github.io/geumjung/"
+SITE_URL = "https://geumjung.netlify.app/"
 
 root = pathlib.Path(__file__).parent
 src = (root / "page.src.html").read_text()
@@ -25,6 +25,7 @@ fragment = src.replace(marker, '<style id="photoCss">' + "\n".join(rules) + "</s
 
 # ── standalone document for hosting ──
 seo_head = f"""<meta charset="utf-8">
+<meta name="naver-site-verification" content="25ee0f2c84a943156451fdd41188ace1bc9b630e">
 <meta name="keywords" content="남양주 카센터, 화도읍 카센터, 화도읍 카센타, 금남리 카센터, 마석 카센터, 남양주 공업사, 화도읍 공업사, 자동차 고장, 자동차 수리, 남양주 자동차 정비, 타이어 교체, 엔진오일 교환, 브레이크 정비, 금중자동차공업사, 카포스">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{SITE_URL}">

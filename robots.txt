@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jaedeok1.github.io/geumjung/sitemap.xml
+Sitemap: https://geumjung.netlify.app/sitemap.xml
